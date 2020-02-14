@@ -9,13 +9,12 @@ provider "google" {
 // terraform module to create vpc network
 module "vpc" {
   source = "../modules/vpc" 
-  # name   = "network"
-
 }
 
-# // terraform module to create compute resources
-# module "compute" {
-#   source = "../modules/compute" 
- 
-
-# }
+// terraform module to create compute resources
+module "compute" {
+  source = "../modules/compute" 
+  network = module.vpc.vpc_east
+  subnetwork = module.vpc.dev_name
+  
+}
