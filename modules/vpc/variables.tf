@@ -1,8 +1,10 @@
 
-variable "vpc_names" {
-  description = "Create vpc networks with these names"
-  type        = list(string)
-  default     = ["vpc-east", "vpc-west"]
+variable "vpc_east" {
+  default     = "vpc-east"
+}
+
+variable "vpc_west" {
+  default     = "vpc-west"
 }
 
 variable "ue1_name1" {
